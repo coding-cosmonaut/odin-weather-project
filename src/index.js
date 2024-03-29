@@ -1,4 +1,5 @@
 import "./style.css";
 import APIrequest from "./getWeather";
+import { searchButton } from "./DOM";
 
-APIrequest("London");
+searchButton.addEventListener("click", APIrequest);

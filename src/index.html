@@ -6,9 +6,24 @@
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body>
-    <input type="text" class="weather-search" id="weather" />
-    <label
-      for="weather"
-    ></label>
+    <div class="search-bar-container">
+      <input
+        placeholder="Enter city name"
+        type="text"
+        class="weather-search"
+        id="weather"
+      />
+      <label for="weather"></label>
+      <button class="search">Search</button>
+    </div>
+    <div class="results-container">
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
   </body>
 </html>

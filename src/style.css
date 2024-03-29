@@ -1,0 +1,20 @@
+:root {
+  --dark-primary: #1e212d;
+}
+
+/*LIST*/
+/* ul {
+  display: none;
+} */
+
+/* li:first-child::after {
+  content: "Farenheit";
+} */
+
+li {
+  list-style: none;
+}
+
+.input-error {
+  border: 1px solid red;
+}
