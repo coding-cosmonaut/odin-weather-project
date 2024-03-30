@@ -24,12 +24,8 @@ const image = function setImageValueOfGif(url) {
   windowDiv.append(img);
 };
 
-const display = function changeDisplayValue() {};
-
 const render = function renderWeatherData(obj) {
   const values = Object.entries(obj);
-  // const [key, value] = values;
-  console.log(values, "BEFORE VALUES");
   resultDiv.innerHTML = "";
   const ul = document.createElement("ul");
 
