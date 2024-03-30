@@ -27,14 +27,24 @@ const image = function setImageValueOfGif(url) {
 const display = function changeDisplayValue() {};
 
 const render = function renderWeatherData(obj) {
-  const values = Object.values(obj);
+  const values = Object.entries(obj);
+  // const [key, value] = values;
+  console.log(values, "BEFORE VALUES");
   resultDiv.innerHTML = "";
   const ul = document.createElement("ul");
-  
+
   for (let i = 0; i < values.length; i++) {
     const li = document.createElement("li");
-    console.log(values[i], 'VALUES')
-    li.innerHTML = values[i];
+    const [key, value] = values[i];
+    if (i === 0) {
+      li.innerHTML = `${value}`;
+    } else if (i === 1 || i === 2) {
+      li.innerHTML = `${key}:  ${value} &degF`;
+    } else if (i === 4) {
+      li.innerHTML = `${key}:  ${value} mph`;
+    } else {
+      li.innerHTML = `${key}:  ${value}`;
+    }
     ul.appendChild(li);
   }
   resultDiv.append(ul);
