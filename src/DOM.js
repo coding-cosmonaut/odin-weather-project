@@ -1,6 +1,6 @@
 const input = document.querySelector("input");
 const searchButton = document.querySelector("button");
-const lis = document.querySelectorAll("li");
+const resultDiv = document.querySelector(".results");
 
 const getValue = function getInputValue() {
   return input.value;
@@ -17,12 +17,22 @@ const placeholder = function showAndRemoveErrorPlaceholder(status) {
 
 const display = function changeDisplayValue() {};
 
+// const check = function deleteOldUlAndAppendNewUl() {
+//   while (resultDiv.firstChild) {
+
+//   }
+// }
+
 const render = function renderWeatherData(obj) {
   const values = Object.values(obj);
-  for (let i = 0; i < lis.length; i++) {
-    console.log(lis, "lis", lis[i]);
-    lis[i].innerHTML = values[i];
+  resultDiv.innerHTML = "";
+  const ul = document.createElement("ul");
+  for (let i = 0; i < values.length; i++) {
+    const li = document.createElement("li");
+    li.innerHTML = values[i];
+    ul.appendChild(li);
   }
+  resultDiv.append(ul);
 };
 
 export { getValue, searchButton, render, placeholder };

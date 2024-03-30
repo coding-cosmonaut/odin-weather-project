@@ -1,6 +1,5 @@
 // API keys
 // weather: ddb39aee23f242b3992194953242703
-// giphy: OaeV76rXJPjKoCQO350DmOuAON1mFS5I
 import { getValue, render, placeholder } from "./DOM";
 
 const parseData = function extractDataFromRequest(weatherData) {

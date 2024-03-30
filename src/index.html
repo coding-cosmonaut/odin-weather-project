@@ -4,26 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= htmlWebpackPlugin.options.title %></title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+    </style>
   </head>
   <body>
     <div class="search-bar-container">
-      <input
-        placeholder="Enter city name"
-        type="text"
-        class="weather-search"
-        id="weather"
-      />
-      <label for="weather"></label>
-      <button class="search">Search</button>
+      <div class="input-container">
+        <label for="weather">Weather Search</label>
+        <input
+          placeholder="Enter city name"
+          type="text"
+          class="weather-search"
+          id="weather"
+        />
+        <button class="search">Search</button>
+      </div>
     </div>
     <div class="results-container">
-      <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
+      <div class="results"></div>
+      <div class="window"></div>
     </div>
   </body>
 </html>
