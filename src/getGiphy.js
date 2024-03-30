@@ -3,11 +3,11 @@
 const giphyAPIRequest = async function getGiphyData(weatherText) {
   try {
     const giphyData = await fetch(
-      `api.giphy.com/v1/gifs/translate?key=OaeV76rXJPjKoCQO350DmOuAON1mFS5I&s=${weatherText}`
+      `https://api.giphy.com/v1/gifs/translate?key=OaeV76rXJPjKoCQO350DmOuAON1mFS5I&s=${weatherText} weather`
     );
     const jsonData = await giphyData.json();
     console.log(jsonData);
-    return jsonData;
+    return jsonData.data.images.original.url;
   } catch (err) {
     throw new Error("Error!");
   }

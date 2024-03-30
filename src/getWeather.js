@@ -1,6 +1,7 @@
 // API keys
 // weather: ddb39aee23f242b3992194953242703
-import { getValue, render, placeholder } from "./DOM";
+import { getValue, render, placeholder, image } from "./DOM";
+import giphyAPIRequest from "./getGiphy";
 
 const parseData = function extractDataFromRequest(weatherData) {
   console.log(weatherData, "in parse");
@@ -24,6 +25,9 @@ const APIrequest = async function getWeatherData(location) {
       `http://api.weatherapi.com/v1/current.json?key=ddb39aee23f242b3992194953242703&q=${location}`
     );
     const jsonData = await weatherData.json();
+    console.log(jsonData, "DATAAAAA");
+    const gif = await giphyAPIRequest(jsonData.current.condition.text);
+    image(gif);
     placeholder("remove");
     const dataINeed = parseData(jsonData);
     render(dataINeed);
